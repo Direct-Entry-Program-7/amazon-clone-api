@@ -1,8 +1,9 @@
 package lk.ijse.dep7.amazonclonebackend.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class ItemDTO {
+public class ItemDTO implements Serializable {
     private String code;
     private String title;
     private String image;
@@ -94,7 +95,23 @@ public class ItemDTO {
     }
 
     public enum Rating{
-        FIRST, SECOND, THIRD, FOURTH, FIFTH;
+
+        FIRST(1), SECOND(2), THIRD(3), FOURTH(4), FIFTH(5);
+
+        int rating;
+
+        Rating(int rating) {
+            this.rating = rating;
+        }
+        
+        public int toNumber(){
+            return this.rating;
+        }
+
+        @Override
+        public String toString() {
+            return rating + "";
+        }
     }
 }
 
