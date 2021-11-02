@@ -25,6 +25,7 @@ public class ItemServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
         try (Connection connection = dataSource.getConnection()) {
             ItemService itemService = new ItemService(connection);
             List<ItemDTO> items = itemService.getAllItems();

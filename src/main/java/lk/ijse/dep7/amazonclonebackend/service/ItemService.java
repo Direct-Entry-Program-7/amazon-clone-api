@@ -2,10 +2,7 @@ package lk.ijse.dep7.amazonclonebackend.service;
 
 import lk.ijse.dep7.amazonclonebackend.dto.ItemDTO;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +33,28 @@ public class ItemService {
             return items;
         } catch (SQLException e) {
             throw new RuntimeException("Failed to fetch items from the DB", e);
+        }
+    }
+
+    public ItemDTO getItem(String code){
+        try {
+            PreparedStatement stm = connection.prepareStatement("SELECT * FROM item WHERE code=?");
+            stm.setString(1, code);
+            ResultSet rst = stm.executeQuery();
+
+            if (rst.next()){
+             return new ItemDTO(rst.getString("code"),
+                     rst.getString("title"),
+                     rst.getString("image"),
+                     rst.getString("rating"),
+                     rst.getInt("qty"),
+                     rst.getBigDecimal("unit_price"),
+                     rst.getString("description"));
+            }
+
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to fetch the item " + code, e);
         }
     }
 }
