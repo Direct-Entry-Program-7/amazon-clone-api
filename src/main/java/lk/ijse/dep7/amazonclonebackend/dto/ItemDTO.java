@@ -25,6 +25,33 @@ public class ItemDTO implements Serializable {
         this.description = description;
     }
 
+    public ItemDTO(String code, String title, String image, String rating, int qty, BigDecimal unitPrice, String description) {
+        this.code = code;
+        this.title = title;
+        this.image = image;
+        this.qty = qty;
+        this.unitPrice = unitPrice;
+        this.description = description;
+
+        switch (rating){
+            case "2":
+                this.rating = Rating.SECOND;
+                break;
+            case "3":
+                this.rating = Rating.THIRD;
+                break;
+            case "4":
+                this.rating = Rating.FOURTH;
+                break;
+            case "5":
+                this.rating = Rating.FIFTH;;
+                break;
+            case "1":
+            default:
+                this.rating = Rating.FIRST;
+        }
+    }
+
     public String getCode() {
         return code;
     }
