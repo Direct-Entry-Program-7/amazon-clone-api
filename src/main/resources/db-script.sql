@@ -6,7 +6,7 @@ CREATE TABLE item
     rating      ENUM('1','2','3','4','5') NOT NULL,
     qty         INT           NOT NULL,
     unit_price  DECIMAL(5, 2) NOT NULL,
-    description VARCHAR(1000) NOT NULL
+    description MEDIUMTEXT NOT NULL
 );
 
 INSERT INTO item VALUES ('I001',
