@@ -10,7 +10,7 @@ CREATE TABLE item
     description MEDIUMTEXT                 NOT NULL
 );
 
-INSERT INTO item
+INSERT INTO item (code, image, title, rating, unit_price, qty, description)
 VALUES ('I001',
         'https://m.media-amazon.com/images/I/71NTi82uBEL._AC_UL320_.jpg',
         'Apple AirPods with Charging Case',
