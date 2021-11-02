@@ -24,17 +24,18 @@ public class ItemService {
             ResultSet rst = stm.executeQuery("SELECT * FROM item");
 
             while (rst.next()){
-                new ItemDTO(rst.getString("code"),
+                items.add(new ItemDTO(rst.getString("code"),
                         rst.getString("title"),
                         rst.getString("image"),
                         rst.getString("rating"),
                         rst.getInt("qty"),
                         rst.getBigDecimal("unit_price"),
-                        rst.getString("description"));
+                        rst.getString("description")));
             }
+
+            return items;
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Failed to fetch items from the DB", e);
         }
-        return  null;
     }
 }

@@ -46,7 +46,6 @@ public class ItemDTO implements Serializable {
             case "5":
                 this.rating = Rating.FIFTH;;
                 break;
-            case "1":
             default:
                 this.rating = Rating.FIRST;
         }
