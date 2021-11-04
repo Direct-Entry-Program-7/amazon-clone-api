@@ -46,7 +46,7 @@ public class OrderServlet extends HttpServlet {
 
                 for (OrderDetailDTO orderDetail : orderDetails) {
 
-                    if (!orderDetail.getCode().matches("I\\d+")) {
+                    if (orderDetail.getCode() == null || !orderDetail.getCode().matches("I\\d+")) {
                         throw new RuntimeException("Invalid item code");
                     }
 
@@ -54,7 +54,7 @@ public class OrderServlet extends HttpServlet {
                         throw new RuntimeException("Invalid qty for the item: " + orderDetail.getCode());
                     }
 
-                    if (orderDetail.getUnitPrice().compareTo(new BigDecimal("0")) <= 0) {
+                    if (orderDetail.getUnitPrice() == null || orderDetail.getUnitPrice().compareTo(new BigDecimal("0")) <= 0) {
                         throw new RuntimeException("Invalid unit price for the item: " + orderDetail.getCode());
                     }
 
