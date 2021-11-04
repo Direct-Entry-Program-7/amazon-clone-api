@@ -10,6 +10,25 @@ CREATE TABLE item
     description MEDIUMTEXT                 NOT NULL
 );
 
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order`
+(
+    id INT AUTO_INCREMENT PRIMARY KEY ,
+    date DATE NOT NULL
+);
+
+DROP TABLE IF EXISTS order_detail;
+CREATE TABLE order_detail
+(
+    order_id INT NOT NULL,
+    code VARCHAR(10) NOT NULL,
+    qty INT NOT NULL,
+    unit_price DECIMAL(5,2) NOT NULL,
+    CONSTRAINT PRIMARY KEY (order_id, code),
+    CONSTRAINT FOREIGN KEY (order_id) REFERENCES `order` (id),
+    CONSTRAINT FOREIGN KEY (code) REFERENCES item (code)
+);
+
 INSERT INTO item (code, image, title, rating, unit_price, qty, description)
 VALUES ('I001',
         'https://m.media-amazon.com/images/I/71NTi82uBEL._AC_UL320_.jpg',

@@ -49,7 +49,6 @@ public class ItemServlet extends HttpServlet {
                 response.getWriter().println(jsonb.toJson(items));
             }
 
-
         } catch (SQLException ex) {
             ex.printStackTrace();
             throw new RuntimeException("Failed to obtain a new connection", ex);
