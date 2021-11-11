@@ -1,4 +1,4 @@
-package lk.ijse.dep7.amazonclonebackend.api;
+package lk.ijse.dep7.amazonclone.api;
 
 import java.io.*;
 import java.sql.Connection;
@@ -10,8 +10,8 @@ import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import lk.ijse.dep7.amazonclonebackend.dto.ItemDTO;
-import lk.ijse.dep7.amazonclonebackend.service.ItemService;
+import lk.ijse.dep7.amazonclone.dto.ItemDTO;
+import lk.ijse.dep7.amazonclone.service.ItemService;
 
 import javax.sql.DataSource;
 

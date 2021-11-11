@@ -1,4 +1,4 @@
-package lk.ijse.dep7.amazonclonebackend.dto;
+package lk.ijse.dep7.amazonclone.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

@@ -1,13 +1,11 @@
-package lk.ijse.dep7.amazonclonebackend.filter;
+package lk.ijse.dep7.amazonclone.api.filter;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpServletResponseWrapper;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebFilter(urlPatterns = "/*")
 public class CORSFilter implements Filter {

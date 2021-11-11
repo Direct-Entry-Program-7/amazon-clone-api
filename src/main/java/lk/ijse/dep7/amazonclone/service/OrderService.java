@@ -1,6 +1,6 @@
-package lk.ijse.dep7.amazonclonebackend.service;
+package lk.ijse.dep7.amazonclone.service;
 
-import lk.ijse.dep7.amazonclonebackend.dto.OrderDetailDTO;
+import lk.ijse.dep7.amazonclone.dto.OrderDetailDTO;
 
 import java.sql.*;
 import java.util.List;

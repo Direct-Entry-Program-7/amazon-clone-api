@@ -1,4 +1,4 @@
-package lk.ijse.dep7.amazonclonebackend.api;
+package lk.ijse.dep7.amazonclone.api;
 
 import jakarta.annotation.Resource;
 import jakarta.json.bind.Jsonb;
@@ -7,8 +7,8 @@ import jakarta.json.bind.JsonbException;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import lk.ijse.dep7.amazonclonebackend.dto.OrderDetailDTO;
-import lk.ijse.dep7.amazonclonebackend.service.OrderService;
+import lk.ijse.dep7.amazonclone.dto.OrderDetailDTO;
+import lk.ijse.dep7.amazonclone.service.OrderService;
 
 import javax.sql.DataSource;
 import java.io.IOException;

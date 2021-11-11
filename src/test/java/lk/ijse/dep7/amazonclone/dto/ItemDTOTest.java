@@ -1,10 +1,8 @@
-package lk.ijse.dep7.amazonclonebackend.dto;
+package lk.ijse.dep7.amazonclone.dto;
 
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ItemDTOTest {
 

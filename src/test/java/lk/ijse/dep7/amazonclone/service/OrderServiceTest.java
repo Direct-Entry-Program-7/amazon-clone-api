@@ -1,12 +1,11 @@
-package lk.ijse.dep7.amazonclonebackend.service;
+package lk.ijse.dep7.amazonclone.service;
 
-import lk.ijse.dep7.amazonclonebackend.dto.ItemDTO;
-import lk.ijse.dep7.amazonclonebackend.dto.OrderDetailDTO;
+import lk.ijse.dep7.amazonclone.dto.ItemDTO;
+import lk.ijse.dep7.amazonclone.dto.OrderDetailDTO;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

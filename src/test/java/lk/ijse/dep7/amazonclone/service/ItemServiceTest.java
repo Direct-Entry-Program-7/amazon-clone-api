@@ -1,6 +1,6 @@
-package lk.ijse.dep7.amazonclonebackend.service;
+package lk.ijse.dep7.amazonclone.service;
 
-import lk.ijse.dep7.amazonclonebackend.dto.ItemDTO;
+import lk.ijse.dep7.amazonclone.dto.ItemDTO;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

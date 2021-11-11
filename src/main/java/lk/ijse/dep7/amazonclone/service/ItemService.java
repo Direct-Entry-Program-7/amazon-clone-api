@@ -1,6 +1,6 @@
-package lk.ijse.dep7.amazonclonebackend.service;
+package lk.ijse.dep7.amazonclone.service;
 
-import lk.ijse.dep7.amazonclonebackend.dto.ItemDTO;
+import lk.ijse.dep7.amazonclone.dto.ItemDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
