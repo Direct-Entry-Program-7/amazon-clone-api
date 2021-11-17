@@ -14,13 +14,14 @@ public class UserService {
         this.connection = connection;
     }
 
-    public void saveUser(UserDTO user){
+    public String saveUser(UserDTO user){
         try {
             PreparedStatement stm = connection.prepareStatement("INSERT INTO user (user_id, name, password)  VALUE (?,?,?)");
             stm.setString(1, user.getUserId());
             stm.setString(2, user.getName());
             stm.setString(3, user.getPassword());
             stm.executeUpdate();
+            return user.getUserId();
         } catch (SQLException e) {
             throw new RuntimeException("Failed to save the user", e);
         }
