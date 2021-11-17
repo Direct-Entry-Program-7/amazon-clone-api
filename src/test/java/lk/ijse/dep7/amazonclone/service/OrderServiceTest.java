@@ -39,7 +39,7 @@ class OrderServiceTest {
         orderDetails.add(new OrderDetailDTO("I002", 1, i002.getUnitPrice()));
 
         assertDoesNotThrow(()->{
-            orderService.placeOrder(orderDetails);
+            orderService.placeOrder(orderDetails, "abc@ijse.lk");
         });
 
         ItemDTO afterTestI001 = itemService.getItem("I001");

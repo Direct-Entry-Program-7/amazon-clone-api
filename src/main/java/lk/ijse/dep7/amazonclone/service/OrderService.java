@@ -13,12 +13,13 @@ public class OrderService {
         this.connection = connection;
     }
 
-    public void placeOrder(List<OrderDetailDTO> orderDetails){
+    public void placeOrder(List<OrderDetailDTO> orderDetails, String userId){
         try {
 
             connection.setAutoCommit(false);
 
-            PreparedStatement stm = connection.prepareStatement("INSERT INTO `order` (date) VALUES (NOW())", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stm = connection.prepareStatement("INSERT INTO `order` (date, user_id) VALUES (NOW(), ?)", Statement.RETURN_GENERATED_KEYS);
+            stm.setString(1, userId);
             if (stm.executeUpdate() != 1){
                 throw new RuntimeException("Failed to save the order");
             }

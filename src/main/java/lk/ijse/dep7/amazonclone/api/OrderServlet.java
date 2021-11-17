@@ -66,7 +66,7 @@ public class OrderServlet extends HttpServlet {
             }
 
             OrderService orderService = new OrderService(connection);
-            orderService.placeOrder(orderDetails);
+            orderService.placeOrder(orderDetails, request.getAttribute("userId").toString());
             response.setStatus(HttpServletResponse.SC_CREATED);
         } catch (JsonbException e) {
             e.printStackTrace();
