@@ -30,8 +30,15 @@ class UserServiceTest {
         assertTrue(userId.equals(user.getUserId()));
     }
 
+    @Test
+    void authenticate() {
+        UserDTO user = userService.authenticate("suranga@ijse.lk", "abc");
+        assertNotNull(user);
+    }
+
     @AfterEach
     void tearDown() throws SQLException {
         connection.close();
     }
+
 }
