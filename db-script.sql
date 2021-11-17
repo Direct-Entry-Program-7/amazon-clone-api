@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS order_detail;
 DROP TABLE IF EXISTS item;
 CREATE TABLE item
 (
@@ -10,14 +11,23 @@ CREATE TABLE item
     description MEDIUMTEXT                 NOT NULL
 );
 
+DROP TABLE IF EXISTS user;
+CREATE TABLE user
+(
+    user_id VARCHAR(255) PRIMARY KEY  NOT NULL,
+    name VARCHAR(300) NOT NULL,
+    password CHAR(64) NOT NULL
+);
+
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order`
 (
     id INT AUTO_INCREMENT PRIMARY KEY ,
-    date DATE NOT NULL
+    date DATE NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    CONSTRAINT FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
 
-DROP TABLE IF EXISTS order_detail;
 CREATE TABLE order_detail
 (
     order_id INT NOT NULL,
@@ -76,3 +86,5 @@ VALUES ('I001',
         3,
         39.99,
         8, '');
+
+
