@@ -27,9 +27,10 @@ public class UserService {
 
     public UserDTO authenticate(String userId, String password){
         try {
-            Statement stm = connection.createStatement();
-            String sql = String.format("SELECT name FROM user WHERE user_id='%s' AND password='%s'", userId, password);
-            ResultSet rst = stm.executeQuery(sql);
+            PreparedStatement stm = connection.prepareStatement("SELECT name FROM user WHERE user_id=? AND password=?");
+            stm.setString(1, userId);
+            stm.setString(2, password);
+            ResultSet rst = stm.executeQuery();
             return rst.next()? new UserDTO(userId, rst.getString("name"), password): null;
         } catch (SQLException e) {
             throw new RuntimeException("Authentication process failed", e);
