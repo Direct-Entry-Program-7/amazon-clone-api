@@ -25,7 +25,7 @@ class UserServiceTest {
 
     @Test
     void saveUser() {
-        UserDTO user = new UserDTO("upul@ijse.lk", "Ranjith Upul", "123");
+        UserDTO user = new UserDTO("suranga@ijse.lk", "Ranjith Suranga", "123:abc");
         String userId = this.userService.saveUser(user);
         assertTrue(userId.equals(user.getUserId()));
     }

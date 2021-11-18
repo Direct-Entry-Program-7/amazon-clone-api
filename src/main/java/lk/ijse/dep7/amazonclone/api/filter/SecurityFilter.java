@@ -48,7 +48,7 @@ public class SecurityFilter extends HttpFilter {
         try {
             byte[] decodedByteArray = Base64.getDecoder().decode(encodedCredential);
             String decodedCredential = new String(decodedByteArray);
-            String[] splitCredential = decodedCredential.split(":");
+            String[] splitCredential = decodedCredential.split(":", 2);
 
             if (splitCredential.length != 2) {
                 res.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid login credentials");
